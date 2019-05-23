@@ -118,8 +118,8 @@
         this.next().addClass('vhDd__menu');
 
         var settings = $.extend({
-            defaultTheme: true,         // 下拉是否需要往上噴，預設是會(true)
-            insideEvent: true,		    // 點擊下拉內層是否會關閉下拉，預設是會(true)
+            dropdownUpper: true,         // 下拉是否需要向上展開，預設是會(true)
+            insideClosed: true,		    // 點擊下拉內層是否會關閉下拉，預設是會(true)
             tranditionList: false,		// 是否為一般純文字下拉選單，預設是否(false)
             flexible: false             // 下拉高度是否需要彈性伸縮
         }, options);
@@ -127,13 +127,13 @@
         // 判斷tranditionList參數
         if (settings.tranditionList) {
             try {
-                if (!settings.insideEvent)
-                    throw '在tranditionList為true時，insideEvent不可為false!';
+                if (!settings.insideClosed)
+                    throw '在tranditionList為true時，insideClosed不可為false!';
             } catch (error) {
                 console.error(error);
             }
 
-            settings.insideEvent = true;
+            settings.insideClosed = true;
             
             this.each(function() {
                 var $tranditionContent = $(this).find('p');
@@ -176,8 +176,8 @@
                     menuSize = ($menuShow.find('*').hasClass('scrollbar-macosx')) ? _getHiddenDimensions($menuShow.find('.scroll-content').eq(0).children()) : _getHiddenDimensions($menuShow.children());
                     position = _getPosition(windowHeight, windowTop, $(e.target), toggleHeight, $parentScrollbar);
                     
-                    // 判斷defaultTheme參數
-                    if (settings.defaultTheme) {
+                    // 判斷dropdownUpper參數
+                    if (settings.dropdownUpper) {
                         autoPosition = true;
                         
                         if ((position.toBottom + position.scrollBottom) >= (position.toTop + position.scrollTop) || (position.toBottom + position.scrollBottom) >= (menuSize.innerHeight + 10)) {
@@ -219,11 +219,11 @@
         var $menus = this.next('.vhDd__menu');
         $menus.each(function() {
             $(this).off('click').on('click', function(e) {
-                // 判斷insideEvent參數
-                if (!settings.insideEvent) {
+                // 判斷insideClosed參數
+                if (!settings.insideClosed) {
                     try {
                         if (settings.tranditionList) {
-                            throw '在insideEvent為false時，tranditionList不可為true!';
+                            throw '在insideClosed為false時，tranditionList不可為true!';
                         } else {
                             e.stopPropagation();
                         }
