@@ -12,7 +12,6 @@
     var position = null;
     var toggleHeight = 0;
 
-    // 點擊文檔關閉下拉
     $(window).on('click', function(e) {
         if (!e.target.classList.contains('vhDd__toggle') && !e.target.classList.contains('scrollbar-macosx') && !e.target.classList.contains('scroll-bar')) {
             $('.vhDd__menu').removeClass('vhDd__menu_opened');
@@ -118,13 +117,12 @@
         this.next().addClass('vhDd__menu');
 
         var settings = $.extend({
-            dropdownUpper: true,         // 下拉是否需要向上展開，預設是會(true)
-            insideClosed: true,		    // 點擊下拉內層是否會關閉下拉，預設是會(true)
-            tranditionList: false,		// 是否為一般純文字下拉選單，預設是否(false)
-            flexible: false             // 下拉高度是否需要彈性伸縮
+            dropdownUpper: true,
+            insideClosed: true,
+            tranditionList: false,
+            flexible: false
         }, options);
-        
-        // 判斷tranditionList參數
+
         if (settings.tranditionList) {
             try {
                 if (!settings.insideClosed)
@@ -175,13 +173,11 @@
                     $parentScrollbar = $(e.target).parents('.scrollbar-macosx').not('.scroll-wrapper').eq(0);
                     menuSize = ($menuShow.find('*').hasClass('scrollbar-macosx')) ? _getHiddenDimensions($menuShow.find('.scroll-content').eq(0).children()) : _getHiddenDimensions($menuShow.children());
                     position = _getPosition(windowHeight, windowTop, $(e.target), toggleHeight, $parentScrollbar);
-                    
-                    // 判斷dropdownUpper參數
+
                     if (settings.dropdownUpper) {
                         autoPosition = true;
                         
                         if ((position.toBottom + position.scrollBottom) >= (position.toTop + position.scrollTop) || (position.toBottom + position.scrollBottom) >= (menuSize.innerHeight + 10)) {
-                            // 向下展開
                             $menuShow.css(_downStyle(toggleHeight));
 
                             if (settings.flexible) {
@@ -190,7 +186,6 @@
                                 $menuShow.find('.scrollbar-macosx').css('max-height', (position.toBottom + position.scrollBottom) - 20);
                             }
                         } else {
-                            // 向上展開
                             if (settings.flexible) {
                                 flex = true;
 
@@ -209,7 +204,6 @@
                     } else {
                         autoPosition = false;
 
-                        // 向下展開
                         $menuShow.css(_downStyle(toggleHeight));
                     }
                 }
@@ -219,7 +213,6 @@
         var $menus = this.next('.vhDd__menu');
         $menus.each(function() {
             $(this).off('click').on('click', function(e) {
-                // 判斷insideClosed參數
                 if (!settings.insideClosed) {
                     try {
                         if (settings.tranditionList) {
@@ -235,12 +228,6 @@
         });
     }
 
-    /**
-     * 向下的樣式
-     *
-     * @param {*} elHeight
-     * @returns
-     */
     function _downStyle(elHeight) {
         var style = {
             'position': 'absolute',
@@ -250,12 +237,6 @@
         return style;
     }
 
-    /**
-     * 向上的樣式
-     *
-     * @param {*} elHeight
-     * @returns
-     */
     function _upperStyle(elHeight) {
         var style = {
             'position': 'absolute',
@@ -265,35 +246,15 @@
         return style;
     }
 
-    /**
-     * 量測元素至頂部的距離
-     *
-     * @param {*} elTop
-     * @returns
-     */
     function _toPositionTop(elTop) {
         return elTop - windowTop;
     }
 
-    /**
-     * 量測元素至底部的距離
-     *
-     * @param {*} elTop
-     * @param {*} elHeight
-     * @returns
-     */
     function _toPositionBottom(elTop, elHeight) {
         var objToBrowserTop = elTop - windowTop;      
         return windowHeight - (objToBrowserTop + elHeight);
     }
 
-    /**
-     * 取得隱藏元素的尺寸
-     *
-     * @param {*} el
-     * @param {*} includeMargin
-     * @returns
-     */
     function _getHiddenDimensions(el, includeMargin) {
         var $item = el,
             props = {
@@ -341,16 +302,6 @@
         return dim;
     }
 
-    /**
-     * Get Position
-     *
-     * @param {*} browserHeight
-     * @param {*} browserScrollTop
-     * @param {*} target
-     * @param {*} targetHeight
-     * @param {*} targetParent
-     * @returns
-     */
     function _getPosition(browserHeight, browserScrollTop, target, targetHeight, targetParent) {
         if (target !== null && targetParent !== 0) {
             var toggleY = target.offset().top;

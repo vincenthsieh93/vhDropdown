@@ -1,0 +1,40 @@
+.vhDd {
+    position: relative;
+
+    &__toggle {
+        margin: 0 !important;
+        cursor: pointer;
+
+        * {
+            pointer-events: none;
+        }
+    }
+
+    &__menu {
+        position: absolute;
+        top: 100%;
+        border-radius: 6px;
+        background-color: #fff;
+        box-shadow: 0 0 18px 1px rgba(25, 25, 25, .1);
+        z-index: 216;
+        overflow: visible;
+
+        &_opened {
+            display: block !important;
+        }
+    }
+
+    &__item {
+        display: block;
+        cursor: pointer;
+    }
+
+    &__option {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        line-height: 2;
+        letter-spacing: .3px;
+        padding: 0 15px;
+        color: #646464;
+    }
+}
