@@ -2,7 +2,8 @@
   
   
 vhDropdown is a simple jQuery drop-down plugin。  
-主要源於工作上需要且因應統一的設計規範，從而用於提高團隊效率及簡化流程而撰寫。  
+主要源於工作上需要且因應統一的設計規範，從而用於提高團隊效率及簡化流程而撰寫。    
+本套件亦可搭配[jquery scrollbar plugin](https://gromo.github.io/jquery.scrollbar/)使用。
   
   
 ## Usage
@@ -16,6 +17,41 @@ vhDropdown is a simple jQuery drop-down plugin。
 <link rel="stylesheet" href="jquery.vhDropdown.css">
 <script src="jquery.vhDropdown.js"></script>
 ```
+##### HTML structure
+`Without jquery scrollbar`
+```html
+<div class="dropdown">
+  <div id="default" class="dropdown__toggle">
+    <!-- Your code -->
+  </div>
+  <!-- Remember to set "display: none" in this block -->
+  <div class="dropdown__menu">
+    <!-- Content always included -->
+    <div class="dropdown__list">
+      <!-- Dropdown content -->
+    </div>
+  </div>
+</div>
+```
+`With jquery scrollbar`
+```html
+<div class="dropdown">
+  <div id="default" class="dropdown__toggle">
+    <!-- Your code -->
+  </div>
+  <!-- Remember to set "display: none" in this block -->
+  <div class="dropdown__menu">
+    <!-- jquery scrollbar plugin -->
+    <div class="scrollbar-macosx">
+      <!-- Content always included -->
+      <div class="dropdown__list">
+        <!-- Dropdown content -->
+      </div>
+    </div>
+  </div>
+</div>
+```
+
 ##### Call the plugin
 ```js
 $("#element_id").vhDropdown();
