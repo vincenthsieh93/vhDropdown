@@ -117,7 +117,7 @@
         this.next().addClass('vhDd__menu');
 
         var settings = $.extend({
-            dropdownUpper: true,
+            autoDroptop: true,
             insideClosed: true,
             tranditionList: false,
             flexible: false
@@ -174,7 +174,7 @@
                     menuSize = ($menuShow.find('*').hasClass('scrollbar-macosx')) ? _getHiddenDimensions($menuShow.find('.scroll-content').eq(0).children()) : _getHiddenDimensions($menuShow.children());
                     position = _getPosition(windowHeight, windowTop, $(e.target), toggleHeight, $parentScrollbar);
 
-                    if (settings.dropdownUpper) {
+                    if (settings.autoDroptop) {
                         autoPosition = true;
                         
                         if ((position.toBottom + position.scrollBottom) >= (position.toTop + position.scrollTop) || (position.toBottom + position.scrollBottom) >= (menuSize.innerHeight + 10)) {
@@ -188,7 +188,7 @@
                         } else {
                             if (settings.flexible) {
                                 flex = true;
-
+                                
                                 if (menuSize.innerHeight < (position.toTop + position.scrollTop)) {
                                     $menuShow.css(_upperStyle(menuSize.innerHeight));
                                 } else {

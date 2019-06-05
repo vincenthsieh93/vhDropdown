@@ -5,14 +5,204 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>vhDropdown Example</title>
+    <link rel="stylesheet" href="./style/jquery.scrollbar.css">
     <link rel="stylesheet" href="./style/jquery.vhDropdown.css">
     <link rel="stylesheet" href="./style/example.css">
     <script src="./script/jquery-3.2.1.min.js"></script>
+    <script src="./script/jquery.scrollbar.min.js"></script>
     <script src="./script/jquery.vhDropdown.js"></script>
 </head>
 <body>
     <div class="main">
-        
+        <h1 class="title">vhDropdown</h1>
+        <span></span>
+        <div class="container">
+            <h2 class="subtitle">Default.</h2>
+            <div class="note">
+                <p>autoDroptop: true,</p>
+                <p>insideClosed: true,</p>
+                <p>tranditionList: false,</p>
+                <p>flexible: false</p>
+            </div>
+            <!-- Dropdown Module -->
+            <div class="dropdown">
+                <div id="default" class="dropdown__toggle">
+                    <p class="dropdown__txt">California</p>
+                    <i class="dropdown__icn">
+                        <svg><path d="M1 1L5 7L9 1" /></svg>
+                    </i>
+                </div>
+                <div class="dropdown__menu">
+                    <ul class="dropdown__list">
+                        <li class="dropdown__item">
+                            <p>California</p>
+                        </li>
+                        <li class="dropdown__item">
+                            <p>Washington</p>
+                        </li>
+                        <li class="dropdown__item">
+                            <p>Oakland</p>
+                        </li>
+                        <li class="dropdown__item">
+                            <p>Toronto</p>
+                        </li>
+                        <li class="dropdown__item">
+                            <p>New York</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="subtitle">Always dropdown.</h2>
+            <div class="note">
+                <p>autoDroptop: false</p>
+            </div>
+            <!-- Dropdown Module -->
+            <div class="dropdown">
+                <div id="alwaysDropdown" class="dropdown__toggle">
+                    <p class="dropdown__txt">California</p>
+                    <i class="dropdown__icn">
+                        <svg><path d="M1 1L5 7L9 1" /></svg>
+                    </i>
+                </div>
+                <div class="dropdown__menu">
+                    <ul class="dropdown__list">
+                        <li class="dropdown__item">
+                            <p>California</p>
+                        </li>
+                        <li class="dropdown__item">
+                            <p>Washington</p>
+                        </li>
+                        <li class="dropdown__item">
+                            <p>Oakland</p>
+                        </li>
+                        <li class="dropdown__item">
+                            <p>Toronto</p>
+                        </li>
+                        <li class="dropdown__item">
+                            <p>New York</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="subtitle">Don't close when list clicked.</h2>
+            <div class="note">
+                <p>insideClosed: false</p>
+            </div>
+            <!-- Dropdown Module -->
+            <div class="dropdown">
+                <div id="inside" class="dropdown__toggle">
+                    <p class="dropdown__txt">California</p>
+                    <i class="dropdown__icn">
+                        <svg><path d="M1 1L5 7L9 1" /></svg>
+                    </i>
+                </div>
+                <div class="dropdown__menu">
+                    <ul class="dropdown__list">
+                        <li class="dropdown__item">
+                            <p>California</p>
+                        </li>
+                        <li class="dropdown__item">
+                            <p>Washington</p>
+                        </li>
+                        <li class="dropdown__item">
+                            <p>Oakland</p>
+                        </li>
+                        <li class="dropdown__item">
+                            <p>Toronto</p>
+                        </li>
+                        <li class="dropdown__item">
+                            <p>New York</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="subtitle">Create a general dropdown menu automatically.</h2>
+            <div class="note">
+                <p>tranditionList: true</p>
+            </div>
+            <!-- Dropdown Module -->
+            <div class="dropdown">
+                <div id="general" class="dropdown__toggle">
+                    <p class="dropdown__txt"></p>
+                    <i class="dropdown__icn">
+                        <svg><path d="M1 1L5 7L9 1" /></svg>
+                    </i>
+                </div>
+                <div class="dropdown__menu">
+                    <ul class="dropdown__list">
+                        <li class="dropdown__item">California</li>
+                        <li class="dropdown__item">Washington</li>
+                        <li class="dropdown__item">Oakland</li>
+                        <li class="dropdown__item">Toronto</li>
+                        <li class="dropdown__item">New York</li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="subtitle">vhDropdown with <a href="https://gromo.github.io/jquery.scrollbar/" target="_blank">jquery scrollbar</a>.</h2>
+            <div class="scroll">
+                <div class="scrollbar-macosx">
+                    <div class="scroll__container">
+                        <h2 class="subtitle">Make the resposive dropdown list.</h2>
+                        <div class="note">
+                            <p>flexible: true</p>
+                        </div>
+                        <!-- Dropdown Module -->
+                        <div class="dropdown">
+                            <div id="resposive" class="dropdown__toggle">
+                                <p class="dropdown__txt">California</p>
+                                <i class="dropdown__icn">
+                                    <svg><path d="M1 1L5 7L9 1" /></svg>
+                                </i>
+                            </div>
+                            <div class="dropdown__menu">
+                                <div class="scrollbar-macosx">
+                                    <ul class="dropdown__list">
+                                        <li class="dropdown__item">
+                                            <p>California</p>
+                                        </li>
+                                        <li class="dropdown__item">
+                                            <p>Washington</p>
+                                        </li>
+                                        <li class="dropdown__item">
+                                            <p>Oakland</p>
+                                        </li>
+                                        <li class="dropdown__item">
+                                            <p>Toronto</p>
+                                        </li>
+                                        <li class="dropdown__item">
+                                            <p>New York</p>
+                                        </li>
+                                        <li class="dropdown__item">
+                                            <p>San Francisco</p>
+                                        </li>
+                                        <li class="dropdown__item">
+                                            <p>Los Angeles</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script>
+        $('#default').vhDropdown();
+        $('#alwaysDropdown').vhDropdown({
+            autoDroptop: false
+        });
+        $('#inside').vhDropdown({
+            insideClosed: false
+        });
+        $('#general').vhDropdown({
+            tranditionList: true
+        });
+        $('.scrollbar-macosx').scrollbar();
+        $('#resposive').vhDropdown({
+            flexible: true
+        });
+    </script>
 </body>
 </html>

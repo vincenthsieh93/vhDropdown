@@ -26,7 +26,7 @@ $("#element_id").vhDropdown();
 
 ```js
 $("#element_id").vhDropdown({
-    dropdownUpper: true,
+    autoDroptop: true,
     insideClosed: true,
     tranditionList: false,
     flexible: false
@@ -34,7 +34,7 @@ $("#element_id").vhDropdown({
 ```
 Attribute          |Type       |Default  |Description
 -------------------|-----------|---------|-----------
-`dropdownUpper`    |*Boolean*  |`true`   |
-`insideClosed`     |*Boolean*  |`true`   |
-`tranditionList`   |*Boolean*  |`false`  |
-`flexible`         |*Boolean*  |`false`  |
+`autoDroptop`      |*Boolean*  |`true`   |選單是否向上
+`insideClosed`     |*Boolean*  |`true`   |點擊內部是否關閉
+`tranditionList`   |*Boolean*  |`false`  |是否直接建立一個基本的選單
+`flexible`         |*Boolean*  |`false`  |是否需要響應式的選單（需搭配scrollbar套件）
